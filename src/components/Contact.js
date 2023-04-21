@@ -2,9 +2,12 @@ import React from 'react';
 import './Contact.css'
 import linkedinlogo from "../images/LinkedIn_icon_circle.svg.png";
 import emailimage from "../images/emailimagepng.png"
+import InputMask from 'react-input-mask';
 
 
 function Contact() {
+
+
     return (
       <div className='contact'>
         <h1>Entre em contato comigo!</h1>
@@ -18,8 +21,11 @@ function Contact() {
           </a>
         </div>
         <div className="contact-container">
-      <h1>Contact Us</h1>
-      <form>
+      <h1>Entre em contato comigo!</h1>
+      <form action='https://formspree.io/f/xoqzywoo'
+          method='POST'
+          >
+      <input type='hidden' name='_replyto' value='rafael_sousa87@hotmail.com' />
       <label>
           Nome:
           <input type="name" name="email" required />
@@ -30,13 +36,21 @@ function Contact() {
         </label>
         <label>
           Telefone:
-          <input type="tel" name="phone" required />
-        </label>
+
+          <InputMask
+              mask="(99)99999-9999"
+              name="phone"
+              required
+              // pattern='[0-1]{10,}'
+            >
+            </InputMask>
+
+          </label>
         <label>
           Mensagem:
           <textarea name="message" required></textarea>
         </label>
-        <button type="submit">Submit</button>
+        <button type="submit">Enviar</button>
       </form>
       </div>
       </div>
