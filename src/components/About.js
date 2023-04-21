@@ -1,5 +1,6 @@
 import React from 'react';
 import './About.css';
+import ControlledCarousel from './Carousel';
 
 function About() {
   const dataNascimento = new Date(1987, 6, 12);
@@ -11,6 +12,9 @@ function About() {
       <div className='about'>
         <h1>Sobre mim</h1>
         <p>Meu nome é Rafael, tenho {idade}, casado e moro em Jundiaí.</p>
+
+          <ControlledCarousel />
+
       </div>
     );
   }
