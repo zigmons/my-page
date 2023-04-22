@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
 import profilePicture from "../images/IMG-20230117-WA0008.jpg";
-import './Navbar.css'
+
 
 
 function Home() {

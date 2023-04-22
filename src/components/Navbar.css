@@ -1,9 +1,9 @@
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    background-color: #20232a;
-    color: #2b0303;
+    background-color: #1f0533;
+    color: #b04646;
     padding: 20px;
 }
 
@@ -31,5 +31,5 @@ transition: all 0.3s ease-in-out;
 }
 
 .navbar a:hover {
-color: #829ca3;
+color: #213034;
 }
