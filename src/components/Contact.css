@@ -12,7 +12,7 @@
   .contact h1 {
     font-size: 48px;
     margin-top: 20px;
-    margin-bottom: 0;
+    margin-bottom: 10px;
   }
   
   .contact img {
@@ -68,13 +68,23 @@
     width: 100%;
     font-size: 1rem;
   }
+
+  .label{
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0rem;
+    width: 80%;
+  }
   
   button[type="submit"] {
     padding: 0.5rem 1rem;
     margin-top: 1rem;
     border: none;
     border-radius: 0.25rem;
-    background-color: #4CAF50;
+    background-color: #224c24;
     color: #fff;
     font-size: 1rem;
     cursor: pointer;

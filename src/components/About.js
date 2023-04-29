@@ -14,7 +14,7 @@ import awsIcon from '../images/Icons/aws.svg'
 
 
 function About() {
-  const dataNascimento = new Date(1987, 6, 12);
+  const dataNascimento = new Date(1987, 7, 12);
   const idade = Math.floor((new Date() - dataNascimento) / (365.25 * 24 * 60 * 60 * 1000));
 
 

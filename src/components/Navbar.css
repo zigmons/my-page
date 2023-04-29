@@ -33,3 +33,17 @@ transition: all 0.3s ease-in-out;
 .navbar a:hover {
 color: #213034;
 }
+
+.Login{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+} 
+
+.cadastro{
+    position: absolute;
+    right: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+} 
