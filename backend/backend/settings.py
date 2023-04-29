@@ -134,3 +134,7 @@ CORS_ORIGIN_WHITELIST = [
     'http://ec2-54-165-212-40.compute-1.amazonaws.com',
     'https://ec2-54-165-212-40.compute-1.amazonaws.com',
 ]
+
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+]
