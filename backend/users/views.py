@@ -15,3 +15,13 @@ class SignupView(generics.GenericAPIView):
             return Response({"message": "User created successfully", "user": user.name}, status=status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class UserDetailView(generics.RetrieveAPIView):
+    serializer_class = SignupSerializer
+    queryset = Signup.objects.all()
+
+    def retrieve(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = self.get_serializer(instance)
+        return Response(serializer.data, status=status.HTTP_200_OK)

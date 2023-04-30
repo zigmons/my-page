@@ -2,7 +2,7 @@ import axios from 'axios';
 
 async function sendDataToServer(name, email, password) {
   try {
-    const response = await axios.post('http://ec2-54-165-212-40.compute-1.amazonaws.com:8000/api/signup/', {
+    const response = await axios.post('http://127.0.0.1:8000/api/signup/', {
       name: name,
       email: email,
       password: password,
