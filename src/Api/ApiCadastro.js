@@ -1,16 +1,40 @@
+// async function sendDataToServer(name, email, password) {
+//   try {
+//     const response = await fetch('http://localhost:8000/api/signup/', {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json'
+//       },
+//       body: JSON.stringify({
+//         name: name,
+//         email: email,
+//         password: password,
+//       })
+//     });
+//     const data = await response.json();
+//     console.log(data);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
+
+
+// export default sendDataToServer;
+
+
 import axios from 'axios';
 
-async function sendDataToServer(name, email, password) {
-  try {
-    const response = await axios.post('http://127.0.0.1:8000/api/signup/', {
-      name: name,
-      email: email,
-      password: password,
+const API_BASE_URL = 'http://localhost:8000/api/';
+
+function sendDataToServer(signupData) {
+  const url = `${API_BASE_URL}signup/`;
+
+  return axios.post(url, signupData)
+    .then(response => response.data)
+    .catch(error => {
+      console.log(error);
+      return error;
     });
-    console.log(response.data);
-  } catch (error) {
-    console.error(error);
-  }
 }
 
-export default sendDataToServer;
+export default sendDataToServer
