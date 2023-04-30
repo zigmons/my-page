@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css'
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 
 function Navbar() {
   return (
@@ -17,14 +17,14 @@ function Navbar() {
           <Link to="/contact">Contatos</Link>
         </li>
         <li className='navbar-login, Login'>
-          <Button>
+          {/* <Button>
             <Link to="/login" className=''>Login</Link>
           </Button>
         </li>
         <li>
           <Button className='cadastro'>
             <Link to="/signup" >Cadastre-se</Link>
-          </Button>
+          </Button> */}
         </li>
       </ul>
     </nav>
