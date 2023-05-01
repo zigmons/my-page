@@ -1,40 +1,11 @@
-// async function sendDataToServer(name, email, password) {
-//   try {
-//     const response = await fetch('http://localhost:8000/api/signup/', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       },
-//       body: JSON.stringify({
-//         name: name,
-//         email: email,
-//         password: password,
-//       })
-//     });
-//     const data = await response.json();
-//     console.log(data);
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
+export const handleSubmit = async (name, email, password) => {
+  const response = await fetch('http://ec2-52-204-111-64.compute-1.amazonaws.com:8000/api/users', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ name, email, password }),
+  });
+  return response;
+};
 
-
-// export default sendDataToServer;
-
-
-import axios from 'axios';
-
-const API_BASE_URL = 'http://localhost:8000/api/';
-
-function sendDataToServer(signupData) {
-  const url = `${API_BASE_URL}signup/`;
-
-  return axios.post(url, signupData)
-    .then(response => response.data)
-    .catch(error => {
-      console.log(error);
-      return error;
-    });
-}
-
-export default sendDataToServer

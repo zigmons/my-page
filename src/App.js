@@ -5,8 +5,8 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer'
-// import Login from './components/Login';
-// import Cadastro from './components/Cadastro';
+import Login from './components/Login';
+import Cadastro from './components/Cadastro';
 
 import './App.css'
 
@@ -21,8 +21,8 @@ function App() {
           <Route path="/my-page" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          {/* <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Cadastro />} /> */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Cadastro />} />
         </Routes>
 
       </div>

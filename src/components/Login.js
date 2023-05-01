@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import { loginUser } from '../Api/ApiLogin';
+import { useAuth } from '../AuthContext';
+
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -8,6 +10,7 @@ function Login() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { setIsAuthenticated } = useAuth();
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -19,25 +22,23 @@ function Login() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+  
     setError('');
     setLoading(true);
-
+  
     try {
-      const response = await axios.post('/api/login', {
-        email,
-        password,
-      });
-
+      const response = await loginUser(email, password);
+  
       if (response.status === 200) {
-        navigate('/home');
+        setIsAuthenticated(true);
+        navigate('/my-page');
       } else {
         setError('Invalid email or password');
       }
     } catch (error) {
       setError('Something went wrong. Please try again later.');
     }
-
+  
     setLoading(false);
   };
 
