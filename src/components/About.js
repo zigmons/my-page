@@ -10,7 +10,9 @@ import jsIcon from '../images/Icons/1200px-Javascript-shield.svg.png'
 import pythonIcon from '../images/Icons/Python-logo-notext.svg.png'
 import postgreIcon from '../images/Icons/Postgresql_elephant.svg.png'
 import awsIcon from '../images/Icons/aws.svg'
-import Certificados from './Certificados';
+
+
+
 
 
 
@@ -42,7 +44,8 @@ function About() {
             <img src={awsIcon} alt="AWS Icon" /> 
             <img src={reactIcon} className="react-icon" alt="React Icon" />            
           </div> 
-          <Certificados /> 
+          
+          
         </div>
         <div className="image-container">
         

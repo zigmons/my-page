@@ -1,12 +1,21 @@
 import React from 'react';
-import { Document, Page } from 'react-pdf';
-import cert1 from '../images/Certificados/Certificado-Cloud Computing.pdf'
+import { Document, Page, pdfjs } from 'react-pdf/dist/esm/entry.webpack'
 
+import samplePDF from '../images/Certificados/Certificado-CloudComputing.pdf'
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.js`;
+
+// Create Document Component
 function Certificados() {
-    const pdfUrl = {cert1};
-    return (
-      <embed src={pdfUrl} width="100%" height="600px" type='application/pdf' />
-    );
-  }
+  
+  return (
+    
+    <Document file={samplePDF}>
+      <Page pageNumber={1} />
+    </Document>
+  );
+}
+export default Certificados
 
-  export default Certificados
+
+// http://www.africau.edu/images/default/sample.pdf

@@ -12,17 +12,20 @@
   font-size: 4vw;
   margin-bottom: 0;
   margin-top: 10vh;
+  text-align: center;
 }
 
 .about h2 {
   font-size: 4vw;
   margin-bottom: 0;
-  margin-top: 5vh;
+  margin-top: 10vh;
+  text-align: center;
 }
 
 .about p {
   margin-top: 2vh;
   font-size: 1.2vw;
+  text-align: center;
 }
 
 .carrer p {
@@ -90,3 +93,50 @@
     width: 1.5vw;
   }
 } */
+
+.scroll-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.scroll-arrow span {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.scroll-arrow .arrow {
+  width: 0;
+  height: 0;
+  margin-top: 10px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #fff;
+}
+
+.sobre-mim {
+  transition: all 0.5s ease;
+}
+
+.carreira {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.sobre-mim.inactive {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.carreira.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+

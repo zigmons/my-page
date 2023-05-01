@@ -14,6 +14,7 @@ function ControlledCarousel() {
   };
 
   return (
+    <div>
     <Carousel activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
         <img
@@ -22,9 +23,10 @@ function ControlledCarousel() {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>Eu e Leticia</h3>
-          <p>Eu e a minha esposa.</p>
+        <h3 className='text-foto'>Eu e Leticia</h3>
+        <p className='text-foto'>Eu e a minha esposa.</p>
         </Carousel.Caption>
+
       </Carousel.Item>
       <Carousel.Item>
         <img
@@ -34,9 +36,11 @@ function ControlledCarousel() {
         />
 
         <Carousel.Caption>
-          <h3>Bruce</h3>
-          <p>Bruce é o nosso cachorro, dei ele para a Leticia logo no inicio do nosso casamento. Ele tem nos acompanhado em nossa jornada</p>
+        <h3 className='text-foto'>Bruce</h3>
+        <p className='text-foto'>Bruce é o nosso cachorro, dei ele para a Leticia logo no inicio do nosso casamento. Ele tem nos acompanhado em nossa jornada</p>
+          
         </Carousel.Caption>
+
       </Carousel.Item>
       <Carousel.Item>
         <img
@@ -46,13 +50,15 @@ function ControlledCarousel() {
         />
 
         <Carousel.Caption>
-          <h3>Família</h3>
-          <p>
+        <h3 className='text-foto'>Família</h3>
+          <p className='text-foto'>
             A presença e participação da família é uma parte importante de nossas vidas.
           </p>
         </Carousel.Caption>
+
       </Carousel.Item>
     </Carousel>
+    </div>
   );
 }
 
