@@ -17,7 +17,7 @@ function Navbar() {
     <nav className='navbar'>
       <ul>
         <li>
-          <Link to="/my-page">Início</Link>
+          <Link to="/">Início</Link>
         </li>
         <li>
           <Link to="/about">Sobre mim</Link>
