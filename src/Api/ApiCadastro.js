@@ -10,7 +10,7 @@
 // };
 
 export const handleSubmit = async (name, email, password) => {
-  const response = await fetch('http://api.rsca.com.br:8000/api/users', {
+  const response = await fetch('https://bcux7mgh1m.execute-api.us-east-1.amazonaws.com/dev/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

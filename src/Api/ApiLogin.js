@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://api.rsca.com.br:8000',
+  baseURL: 'https://bcux7mgh1m.execute-api.us-east-1.amazonaws.com/dev',
 });
 
 export async function loginUser(email, password) {
