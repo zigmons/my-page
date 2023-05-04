@@ -65,7 +65,7 @@ h1 {
     box-shadow: 0 0 0.125rem 0.0625rem rgba(0, 0, 0, 0.1);
     width: 100%;
     font-size: 1rem;
-    text-align: center; /* Center the email and password fields */
+    text-align: center; 
   }
   
   .login-btn {

@@ -17,31 +17,36 @@ function Cadastro() {
     setFormData({ ...formData, [name]: value });
   };
 
+  const [successMessage, setSuccessMessage] = useState('');
+
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     setIsLoading(true);
+    setSuccessMessage(''); 
     try {
       const { name, email, password } = formData;
       const response = await handleSubmit(name, email, password);
       if (response.ok) {
         const data = await response.json();
         console.log(data);
-        // Optionally, you can show a success message or redirect to a success page
+        setSuccessMessage('Cadastro realizado com sucesso!'); 
       } else {
         throw new Error(`${response.status} ${response.statusText}`);
       }
     } catch (error) {
       console.error(error);
-      // Optionally, you can show an error message to the user
     } finally {
       setIsLoading(false);
       setFormData({ name: '', email: '', password: '' });
     }
   };
 
+
   return (
     <div className='form'>
       <h1>Cadastre-se</h1>
+      {successMessage && <div className="success-message">{successMessage}</div>}
     <Form  onSubmit={handleFormSubmit}>
       <Form.Group controlId="formBasicName">
         <Form.Label className='label'>Name</Form.Label>
@@ -83,7 +88,7 @@ function Cadastro() {
             aria-hidden="true"
           />
         ) : (
-          'Submit'
+          'Cadastrar'
         )}
       </Button>
     </Form>

@@ -35,10 +35,10 @@ function Login() {
         setIsAuthenticated(true);
         navigate('/download');
       } else {
-        setError('Invalid email or password');
+        setError('E-mail ou senha inválidos');
       }
     } catch (error) {
-      setError('Something went wrong. Please try again later.');
+      setError('Algo deu errado. Por favor, tente novamente mais tarde');
     }
   
     setLoading(false);
