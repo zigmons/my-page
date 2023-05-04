@@ -3,12 +3,12 @@ import { Document, Page, pdfjs } from 'react-pdf/dist/esm/entry.webpack';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import Modal from 'react-modal';
 import './Download.css';
-import frontendPart1 from '../assets/certificates/Certificado Front-end.pdf';
-import frontendPart2 from '../assets/certificates/Certificado Front-end - Parte 2.pdf';
-import frontendLibs from '../assets/certificates/Certificado Bibliotecas e Frameworks Front end.pdf';
-import cloudComputing from '../assets/certificates/Certificado - Cloud Computing.pdf';
-import python from '../assets/certificates/Certificado - Python.pdf';
-import backend from '../assets/certificates/Certificado Back-end.pdf';
+// import frontendPart1 from '../assets/certificates/Certificado Front-end.pdf';
+// import frontendPart2 from '../assets/certificates/Certificado Front-end - Parte 2.pdf';
+// import frontendLibs from '../assets/certificates/Certificado Bibliotecas e Frameworks Front end.pdf';
+// import cloudComputing from '../assets/certificates/Certificado - Cloud Computing.pdf';
+// import python from '../assets/certificates/Certificado - Python.pdf';
+// import backend from '../assets/certificates/Certificado Back-end.pdf';
 
 
 Modal.setAppElement('#root');
@@ -18,13 +18,22 @@ function Download() {
   const [selectedCertificate, setSelectedCertificate] = useState(null);
 
   const certificates = [
-    { title: 'Frontend - Parte 1', file: frontendPart1 },
-    { title: 'Frontend - Parte 2', file: frontendPart2 },
-    { title: 'Frontend - Bibliotecas e Frameworks', file: frontendLibs },
-    { title: 'Cloud Computing', file: cloudComputing },
-    { title: 'Python', file: python },
-    { title: 'Backend', file: backend },
+    { title: 'Frontend - Parte 1', file: process.env.PUBLIC_URL + '/certificates/Certificado Front-end.pdf' },
+    { title: 'Frontend - Parte 2', file: process.env.PUBLIC_URL + '/certificates/Certificado Front-end - Parte 2.pdf' },
+    { title: 'Frontend - Bibliotecas e Frameworks', file: process.env.PUBLIC_URL + '/certificates/Certificado Bibliotecas e Frameworks Front end.pdf' },
+    { title: 'Cloud Computing', file: process.env.PUBLIC_URL + '/certificates/Certificado - Cloud Computing.pdf' },
+    { title: 'Python', file: process.env.PUBLIC_URL + '/certificates/Certificado - Python.pdf' },
+    { title: 'Backend', file: process.env.PUBLIC_URL + '/certificates/Certificado Back-end.pdf' },
   ];
+
+  // const certificates = [
+  //   { title: 'Frontend - Parte 1', file: frontendPart1 },
+  //   { title: 'Frontend - Parte 2', file: frontendPart2 },
+  //   { title: 'Frontend - Bibliotecas e Frameworks', file: frontendLibs },
+  //   { title: 'Cloud Computing', file: cloudComputing },
+  //   { title: 'Python', file: python },
+  //   { title: 'Backend', file: backend },
+  // ];
 
   useEffect(() => {
     pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
