@@ -5,45 +5,74 @@
     background-color: #1f0533;
     color: #b04646;
     padding: 20px;
-}
-
-.navbar ul {
-display: flex;
-list-style: none;
-margin: 0;
-padding: 0;
-}
-
-.navbar li {
-margin-right: 20px;
-}
-
-.navbar li:last-child {
-margin-right: 0;
-}
-
-.navbar a {
-text-decoration: none;
-color: #701448;
-font-weight: bold;
-font-size: 18px;
-transition: all 0.3s ease-in-out;
-}
-
-.navbar a:hover {
-color: #213034;
-}
-
-.Login{
-    position: absolute;
-    right: 0;
-    top: 50%;
+  }
+  
+  .navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .navbar li {
+    margin-right: 20px;
+  }
+  
+  .navbar li:last-child {
+    margin-right: 0;
+    margin-left: auto;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: #701448;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .navbar a:hover {
+    color: #213034;
+  }
+  
+  .Login {
     transform: translateY(-50%);
-} 
-
-.cadastro{
-    position: absolute;
-    right: 6%;
-    top: 50%;
+    margin-top: 30px;
+  }
+  
+  .cadastro {
+    margin-left: 20px;
     transform: translateY(-50%);
-} 
+    margin-top: 30px;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .navbar li {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .navbar li:last-child {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  
+    .button-download{
+      margin-left: 10px;
+    }
+    .Login,
+    .cadastro {
+      position: static;
+      margin: 10px 0;
+      transform: none;
+  
+    }
+  }
+  

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Form, Button, Spinner } from 'react-bootstrap';
 import { handleSubmit } from '../Api/ApiCadastro.js';
+import './Cadastro.css'
+
 
 function Cadastro() {
   const [formData, setFormData] = useState({
@@ -38,9 +40,11 @@ function Cadastro() {
   };
 
   return (
-    <Form onSubmit={handleFormSubmit}>
+    <div className='form'>
+      <h1>Cadastre-se</h1>
+    <Form  onSubmit={handleFormSubmit}>
       <Form.Group controlId="formBasicName">
-        <Form.Label>Name</Form.Label>
+        <Form.Label className='label'>Name</Form.Label>
         <Form.Control
           type="text"
           name="name"
@@ -50,7 +54,7 @@ function Cadastro() {
       </Form.Group>
 
       <Form.Group controlId="formBasicEmail">
-        <Form.Label>Email</Form.Label>
+        <Form.Label className='label'>Email</Form.Label>
         <Form.Control
           type="email"
           name="email"
@@ -60,7 +64,7 @@ function Cadastro() {
       </Form.Group>
 
       <Form.Group controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
+        <Form.Label className='label'>Senha</Form.Label>
         <Form.Control
           type="password"
           name="password"
@@ -83,6 +87,7 @@ function Cadastro() {
         )}
       </Button>
     </Form>
+    </div>
   );
 }
 

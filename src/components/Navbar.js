@@ -10,50 +10,46 @@ function Navbar() {
 
   const handleLogout = () => {
     setIsAuthenticated(false);
-    navigate('/my-page');
+    navigate('/');
   };
 
   return (
-    <nav className='navbar'>
-      <ul>
-        <li>
-          <Link to="/">Início</Link>
-        </li>
-        <li>
-          <Link to="/about">Sobre mim</Link>
-        </li>
-        <li>
-          <Link to="/contact">Contatos</Link>
-        </li>
-        {isAuthenticated ? (
-          <>
-            <li>
-              <Button onClick={handleLogout}>Logout</Button>
-            </li>
-            <li>
-              <Button>
-                <Link to="/download">Download</Link>
-              </Button>
-            </li>
-          </>
-        ) : (
-          <>
-            <li className="navbar-login, Login">
-              <Button>
-                <Link to="/login" className="">
-                  Login
-                </Link>
-              </Button>
-            </li>
-            <li>
-              <Button className="cadastro">
-                <Link to="/signup">Cadastre-se</Link>
-              </Button>
-            </li>
-          </>
-        )}
-      </ul>
-    </nav>
+<nav className='navbar'>
+  <ul>
+    <li>
+      <Link to="/">Início</Link>
+    </li>
+    <li>
+      <Link to="/about">Sobre mim</Link>
+    </li>
+    <li>
+      <Link to="/contact">Contatos</Link>
+    </li>
+    <li className="spacer"></li>
+  </ul>
+  <div className="buttons">
+    {isAuthenticated ? (
+      <>
+        <Button>
+          <Link className = 'button-download'to="/download">Download</Link>
+        </Button>
+        <Button onClick={handleLogout}>Logout</Button>
+      </>
+    ) : (
+      <>
+        <Button className="Login">
+          <Link to="/login" >
+            Login
+          </Link>
+        </Button>
+        <Button className="cadastro">
+          <Link to="/signup">Cadastre-se</Link>
+        </Button>
+      </>
+    )}
+  </div>
+</nav>
+
   );
 }
 

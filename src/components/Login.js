@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../Api/ApiLogin';
 import { useAuth } from '../AuthContext';
+import './Login.css'
+
 
 
 function Login() {
@@ -31,7 +33,7 @@ function Login() {
   
       if (response.status === 200) {
         setIsAuthenticated(true);
-        navigate('/my-page');
+        navigate('/download');
       } else {
         setError('Invalid email or password');
       }
@@ -43,11 +45,12 @@ function Login() {
   };
 
   return (
+    <div className="login-container">
     <form onSubmit={handleSubmit}>
       <h1>Login</h1>
       {error && <div className="alert alert-danger">{error}</div>}
       <div className="form-group">
-        <label htmlFor="email">Email</label>
+        <label className= 'label-login' htmlFor="email">Email</label>
         <input
           type="email"
           className="form-control"
@@ -58,7 +61,7 @@ function Login() {
         />
       </div>
       <div className="form-group">
-        <label htmlFor="password">Password</label>
+        <label className= 'label-login' htmlFor="password">Senha</label>
         <input
           type="password"
           className="form-control"
@@ -68,10 +71,11 @@ function Login() {
           required
         />
       </div>
-      <button type="submit" className="btn btn-primary" disabled={loading}>
+      <button type="submit" className="login-btn " disabled={loading}>
         {loading ? 'Loading...' : 'Login'}
       </button>
     </form>
+    </div>
   );
 }
 

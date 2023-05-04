@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer'
 import Login from './components/Login';
 import Cadastro from './components/Cadastro';
+import Download from './components/Download';
 
 import './App.css'
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Cadastro />} />
+          <Route path="/download" element={<Download />} />
         </Routes>
 
       </div>
