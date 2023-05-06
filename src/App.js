@@ -8,6 +8,8 @@ import Footer from './components/Footer'
 import Login from './components/Login';
 import Cadastro from './components/Cadastro';
 import Download from './components/Download';
+import PasswordChange from './components/PasswordChange';
+import { AuthProvider } from './AuthContext';
 
 import './App.css'
 
@@ -16,7 +18,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-
+      <AuthProvider>
         <Navbar className="navbar"/> 
         <Routes>
           <Route path="/" element={<Home />} />
@@ -25,8 +27,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Cadastro />} />
           <Route path="/download" element={<Download />} />
+          <Route path="/alterar-senha" element={<PasswordChange />} />
         </Routes>
-
+        </AuthProvider>
       </div>
       <div>
           <Footer />

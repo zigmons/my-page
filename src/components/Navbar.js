@@ -94,6 +94,11 @@ function Navbar() {
                     Download
                   </Link>
                 </Button>
+                <Button>
+                  <Link className="button-download" to="/alterar-senha">
+                    Alterar Senha
+                  </Link>
+                </Button>
                 <Button onClick={handleLogout}>Logout</Button>
               </>
             ) : (
