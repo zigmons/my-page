@@ -97,3 +97,15 @@
     background-color: #3e8e41;
   }
   
+  .success-message {
+    background-color: #90ee90;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 4px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    transition: all 0.5s ease-in-out;
+  }

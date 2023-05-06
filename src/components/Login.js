@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../Api/ApiLogin';
 import { useAuth } from '../AuthContext';
 import './Login.css'
+import LoginIcon from '@mui/icons-material/Login';
 
 
 
@@ -47,7 +48,9 @@ function Login() {
   return (
     <div className="login-container">
     <form onSubmit={handleSubmit}>
+    <LoginIcon style={{ fontSize: 48 }}/>
       <h1>Login</h1>
+      
       {error && <div className="alert alert-danger">{error}</div>}
       <div className="form-group">
         <label className= 'label-login' htmlFor="email">Email</label>
