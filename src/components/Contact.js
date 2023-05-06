@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './Contact.css'
 import linkedinlogo from "../images/LinkedIn_icon_circle.svg.png";
 import emailimage from "../images/emailimagepng.png"
+import githublogo from '../images/github-removebg-preview (1).png'
 import InputMask from 'react-input-mask';
 import axios from 'axios';
 
@@ -44,11 +45,14 @@ function Contact() {
         <h1>Contatos</h1>
         <p>Segue abaixo algumas formas de entrar em contato comigo:</p>
         <div className="contact-icons">
+        <a href="https://github.com/zigmons" target="_blank" rel="noopener noreferrer">
+            <img src={githublogo} alt="GitHub" title='GitHub'/>
+          </a>
           <a href="https://www.linkedin.com/in/rafael-a-sousa/" target="_blank" rel="noopener noreferrer">
-            <img src={linkedinlogo} alt="LinkedIn" />
+            <img src={linkedinlogo} alt="LinkedIn" title='LinkedIn'/>
           </a>
           <a href="mailto: rafael_sousa87@hotmail.com">
-            <img src={emailimage} alt="Email" />
+            <img src={emailimage} alt="Email" title='Email'/>
           </a>
         </div>
         <div className="contact-container">

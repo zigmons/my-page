@@ -109,3 +109,19 @@
     z-index: 1000;
     transition: all 0.5s ease-in-out;
   }
+
+  .contact-icons img:hover {
+    animation-name: bounce;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  
+  @keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-10px);
+    }
+  }

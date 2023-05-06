@@ -40,13 +40,13 @@ function About() {
       <div className='about' id='about'>
         <NavbarAbout />
         <h1>Sobre mim <InfoIcon /></h1>
-        <p>Meu nome é Rafael, tenho {idade}, sou casado e moro em Jundiaí.</p>
+        <p>Meu nome é Rafael, tenho {idade} anos de idade, sou casado e moro em Jundiaí-SP.</p>
           <ControlledCarousel />
 
           <h2 id='carrer'>Carreira <WorkIcon /></h2>
         <div className='carrer' >  
           <p>
-              Olá, é um prazer compartilhar um pouco da minha jornada com você!<br>
+              É um prazer compartilhar um pouco da minha jornada com você!<br>
               </br> Sou formado em Comércio Exterior e possuo um MBA em Gestão Comercial. No entanto, em janeiro de 2022 decidi expandir meus conhecimentos e estudar programação.<br>
               </br>Comecei aprendendo sobre lógica de programação e, após me familiarizar com algumas linguagens, decidi aprofundar meus estudos em Python. Rapidamente percebi as possibilidades de automação que a linguagem oferecia, e como isso poderia ser aplicado de maneira interessante na área comercial.
               Foi aí que entendi como o Python, em conjunto com o conhecimento que já possuía na área comercial, poderia ser extremamente útil.<br>

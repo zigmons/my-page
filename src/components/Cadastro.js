@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Form, Button, Spinner } from 'react-bootstrap';
 import { handleSubmit } from '../Api/ApiCadastro.js';
 import './Cadastro.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faUserPlus} from '@fortawesome/free-solid-svg-icons'
 
 
 function Cadastro() {
@@ -18,35 +20,70 @@ function Cadastro() {
   };
 
   const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
+  const validateEmail = (email) => {
+    const emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+    return emailRegex.test(email);
+  };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     setIsLoading(true);
-    setSuccessMessage(''); 
+    setSuccessMessage('');
+    setErrorMessage('');
+
     try {
       const { name, email, password } = formData;
+
+      if (!validateEmail(email)) {
+        setErrorMessage('Email inválido.');
+        setIsLoading(false);
+        setTimeout(() => {
+          setErrorMessage('');
+        }, 5000);
+        return;
+      }
+
+      if (password.length < 6) {
+        setErrorMessage('A senha deve ter pelo menos 6 caracteres.');
+        setIsLoading(false);
+        setTimeout(() => {
+          setErrorMessage('');
+        }, 5000);
+        return;
+      }
+
       const response = await handleSubmit(name, email, password);
       if (response.ok) {
         const data = await response.json();
         console.log(data);
-        setSuccessMessage('Cadastro realizado com sucesso!'); 
+        setSuccessMessage('Cadastro realizado com sucesso!');
+        setTimeout(() => {
+          setSuccessMessage('');
+        }, 5000);
+        setFormData({ name: '', email: '', password: '' });
       } else {
         throw new Error(`${response.status} ${response.statusText}`);
       }
     } catch (error) {
       console.error(error);
+      setErrorMessage('Ocorreu um erro ao cadastrar. Por favor, verifique se o usuário já existe');
+      setTimeout(() => {
+        setErrorMessage('');
+      }, 5000);
     } finally {
       setIsLoading(false);
-      setFormData({ name: '', email: '', password: '' });
     }
+    
   };
-
 
   return (
     <div className='form'>
-      <h1>Cadastre-se</h1>
+      
+      <h1>Cadastre-se <FontAwesomeIcon icon={faUserPlus} beatFade size='sm' /></h1>
       {successMessage && <div className="success-message">{successMessage}</div>}
+      {errorMessage && <div className="error-message">{errorMessage}</div>}
     <Form  onSubmit={handleFormSubmit}>
       <Form.Group controlId="formBasicName">
         <Form.Label className='label'>Name</Form.Label>
