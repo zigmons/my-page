@@ -10,6 +10,7 @@ import Cadastro from './components/Cadastro';
 import Download from './components/Download';
 import PasswordChange from './components/PasswordChange';
 import { AuthProvider } from './AuthContext';
+import AuthenticatedContent  from './components/AuthenticatedContent';
 
 import './App.css'
 
@@ -26,9 +27,16 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Cadastro />} />
-          <Route path="/download" element={<Download />} />
+          <Route
+              path="/download"
+              element={
+                <AuthenticatedContent>
+                  <Download />
+                </AuthenticatedContent>
+              }
+            />
           <Route path="/alterar-senha" element={<PasswordChange />} />
-        </Routes>
+    </Routes>
         </AuthProvider>
       </div>
       <div>
