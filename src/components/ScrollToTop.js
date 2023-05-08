@@ -1,5 +1,7 @@
 import React from 'react';
 import './ScrollToTop.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleArrowUp } from '@fortawesome/free-solid-svg-icons'
 
 function ScrollToTop() {
   const scrollToTop = () => {
@@ -8,8 +10,8 @@ function ScrollToTop() {
 
   return (
     <div className="scroll-to-top" onClick={scrollToTop}>
-      {/* Add the arrow symbol or an icon here */}
-      <span>&#8593;</span>
+      {<FontAwesomeIcon icon={faCircleArrowUp} beat size='xl'/>}
+      
     </div>
   );
 }

@@ -15,7 +15,7 @@ function AuthenticatedContent({ children }) {
   }, [setIsAuthenticated]);
 
   if (loading) {
-    return <div>Loading...</div>; // You can replace this with a spinner or any loading message
+    return <div>Loading...</div>; 
   }
 
   return isAuthenticated ? children : <Navigate to="/login" replace />;

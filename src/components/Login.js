@@ -36,7 +36,7 @@ function Login() {
   
       if (response.status === 200) {
         setIsAuthenticated(true);
-        localStorage.setItem('isAuthenticated', JSON.stringify(true)); // Add this line
+        localStorage.setItem('isAuthenticated', JSON.stringify(true)); 
         navigate('/download');
       } else {
         setError('E-mail ou senha inválidos');
