@@ -56,19 +56,20 @@
 // export default Navbar;
 
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation} from 'react-router-dom';
 import { Container, Nav, Navbar as BootstrapNavbar, Button } from 'react-bootstrap';
 import { useAuth } from '../AuthContext';
 import './Navbar.css';
 
 function Navbar() {
-  const { isAuthenticated, setIsAuthenticated } = useAuth();
+  const { isAuthenticated, logOutUser } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleLogout = () => {
-    setIsAuthenticated(false);
-    navigate('/');
-  };
+    logOutUser(); 
+    navigate(location.pathname);
+  }
 
   return (
     <BootstrapNavbar bg="" variant="dark" expand="lg" className="navbar">

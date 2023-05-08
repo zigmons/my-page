@@ -23,6 +23,8 @@ function Login() {
     setPassword(event.target.value);
   };
 
+  
+
   const handleSubmit = async (event) => {
     event.preventDefault();
   
@@ -34,6 +36,7 @@ function Login() {
   
       if (response.status === 200) {
         setIsAuthenticated(true);
+        localStorage.setItem('isAuthenticated', JSON.stringify(true)); // Add this line
         navigate('/download');
       } else {
         setError('E-mail ou senha inválidos');
