@@ -116,6 +116,6 @@ export default function Carbo() {
       <button onClick={handleClick} disabled={isButtonDisabled}>
         Selecionar
       </button>
-      {resultado && <p>{resultado}</p>}
+      {resultado && <p style={{ color: 'white'} }>{resultado}</p>}
     </div>
   );}

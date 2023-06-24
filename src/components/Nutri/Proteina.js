@@ -54,7 +54,7 @@ export default function Proteina() {
         onChange={handleSelectGordura}
         placeholder="Selecione uma Proteína"
       />
-      {gramasProteina && <p>{gramasProteina} gramas</p>}
+      {gramasProteina && <p style={{ color: 'white'} }>{gramasProteina} gramas</p>}
     </div>
   );
 }

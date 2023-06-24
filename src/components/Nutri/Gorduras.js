@@ -54,7 +54,7 @@ export default function Gorduras() {
         onChange={handleSelectGordura}
         placeholder="Selecione uma gordura"
       />
-      {gramasGordura && <p>{gramasGordura} gramas</p>}
+      {gramasGordura && <p style={{ color: 'white'} }>{gramasGordura} gramas</p>}
     </div>
   );
 }

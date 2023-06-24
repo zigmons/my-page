@@ -54,7 +54,7 @@ export default function Frutas() {
         onChange={handleSelectFruta}
         placeholder="Selecione uma fruta"
       />
-      {gramasFruta && <p>{gramasFruta} gramas</p>}
+      {gramasFruta && <p style={{ color: 'white'} }>{gramasFruta} gramas</p>}
     </div>
   );
 }

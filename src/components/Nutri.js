@@ -4,6 +4,7 @@ import Gorduras from './Nutri/Gorduras'
 import Graos from './Nutri/Graos'
 import Proteina from './Nutri/Proteina'
 import Carbo from './Nutri/Carbo'
+import './Nutri.css';
 
 export default function Nutri() {
   return (
