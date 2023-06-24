@@ -11,6 +11,7 @@ import Download from './components/Download';
 import PasswordChange from './components/PasswordChange';
 import { AuthProvider } from './AuthContext';
 import AuthenticatedContent  from './components/AuthenticatedContent';
+import Nutri from './components/Nutri';
 
 import './App.css'
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Cadastro />} />
+          <Route path="/nutri" element={<Nutri />} />
           <Route
               path="/download"
               element={
