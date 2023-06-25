@@ -8,12 +8,23 @@ import './Nutri.css';
 
 export default function Nutri() {
   return (
-    <div>
-        <Frutas />,
+    <div className="container">
+      <h1>Equivalências</h1>
+      <div className="select-container">
+        <Frutas />
+      </div>
+      <div className="select-container">
         <Gorduras />
+      </div>
+      <div className="select-container">
         <Graos />
+      </div>
+      <div className="select-container">
         <Proteina />
+      </div>
+      <div className="select-container">
         <Carbo />
+      </div>
     </div>
   )
 }

@@ -95,6 +95,8 @@ export default function Carbo() {
   return (
     <div>
       <h1>Carboidratos</h1>
+      <h2>Base: Arroz(branco ou integral): 200 gramas /
+        Feijão (carioca): 80 gramas</h2>
       <Select
         options={[
           { value: 1, label: '1 opção' },
