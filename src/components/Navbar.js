@@ -96,6 +96,11 @@ function Navbar() {
                   </Link>
                 </Button>
                 <Button>
+                  <Link className="button-download" to="/nutri">
+                    Nutri
+                  </Link>
+                </Button>
+                <Button>
                   <Link className="button-download" to="/alterar-senha">
                     Alterar Senha
                   </Link>

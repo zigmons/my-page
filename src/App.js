@@ -37,6 +37,14 @@ function App() {
                 </AuthenticatedContent>
               }
             />
+          <Route
+              path="/nutri"
+              element={
+                <AuthenticatedContent>
+                  <Nutri />
+                </AuthenticatedContent>
+              }
+            />
           <Route path="/alterar-senha" element={<PasswordChange />} />
     </Routes>
         </AuthProvider>
